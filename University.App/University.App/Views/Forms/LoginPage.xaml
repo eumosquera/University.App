@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="University.App.Views.Forms.LoginPage"
+             xmlns:viewModel="clr-namespace:University.App.ViewsModels.Forms">
+
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+            <StackLayout Margin="20,32"
+                         Spacing="0">
+
+                <Frame BackgroundColor="SkyBlue" 
+                   CornerRadius="50">
+                    <Label Text="Login Page" 
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       FontSize="Medium"/>
+
+                </Frame>
+
+                <Label />
+                <Label Text="E-mail" />
+                <Entry Placeholder="Enter your e-mail" x:Name="Email"
+                       Text="{Binding }"/>
+                
+                <Label Text="Password" />
+                <Entry Placeholder="Enter passwd" x:Name="Passwd"/>
+
+                <Button Text="Login" 
+                    BackgroundColor="Navy"
+                    TextColor="White"
+                    CornerRadius="50"
+                    x:Name="Register"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
