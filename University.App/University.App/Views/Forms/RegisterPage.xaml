@@ -1,57 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="University.App.Views.Forms.LoginPage"
+             x:Class="University.App.Views.Forms.RegisterPage"
              xmlns:viewModel="clr-namespace:University.App.ViewsModels.Forms">
 
-
     <ContentPage.BindingContext>
-        <viewModel:LoginViewModel />
+        <viewModel:RegisterViewModel/>
     </ContentPage.BindingContext>
-
+    
     <ContentPage.Content>
         <ScrollView HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
             <StackLayout Margin="20,32"
                          Spacing="0">
 
-                <Image Source="login" HeightRequest="250" />
+                <Image Source="register" HeightRequest="250" />
 
                 <Frame BackgroundColor="SkyBlue" 
                    CornerRadius="50">
-                    <Label Text="Login Page" 
+                    <Label Text="Register Page" 
                        HorizontalTextAlignment="Center"
                        TextColor="White"
                        FontSize="Medium"/>
-                    
-
                 </Frame>
-                
+
                 <Label />
                 <Label Text="E-mail" />
                 <Entry Placeholder="Enter your e-mail" x:Name="Email"
                        Text="{Binding Email}"/>
-                
+
                 <Label Text="Password" />
                 <Entry Placeholder="Enter passwd" x:Name="Passwd"
                        IsPassword="True"
                        Text="{Binding Password}"/>
+                
+                <!--<Label Text="Confirm Password" />
+                <Entry Placeholder="Confirm passwd" x:Name="ConfirmPasswd"
+                       IsPassword="True"
+                       Text="{Binding Password}"/>-->
 
-                <Button Text="Log In" 
+                <Button Text="Register" 
                     BackgroundColor="Navy"
                     TextColor="White"
+                    CornerRadius="50"
+                    x:Name="Register"
+                        Command="{Binding RegisterCommand}"
+                    />
+
+                <Button FontAttributes="Italic" Text="Log in" 
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
                     CornerRadius="50"
                     x:Name="Login"
                         Command="{Binding LoginCommand}"
                     />
 
-                <Button FontAttributes="Italic" Text="Register" 
-                    TextColor="Black"
-                    BackgroundColor="Transparent"
-                    CornerRadius="50"
-                    x:Name="Register"
-                        Command="{Binding RegisterCommand}"
-                    />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
