@@ -15,12 +15,13 @@ namespace University.App.ViewsModels.Forms
     {
 
         #region Attributes
-        private ObservableCollection<CoursesDTO> _courses;
+
+        private ObservableCollection<CourseItemViewModel> _courses;
         private bool _isRefreshing;
         #endregion
 
         #region Properties
-        public ObservableCollection<CoursesDTO> Courses
+        public ObservableCollection<CourseItemViewModel> Courses
         {
             get { return _courses; }
             set { this.SetValue(ref _courses, value); }
@@ -49,7 +50,7 @@ namespace University.App.ViewsModels.Forms
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var courses = JsonConvert.DeserializeObject<ObservableCollection<CoursesDTO>>(result);
+                    var courses = JsonConvert.DeserializeObject<ObservableCollection<CourseItemViewModel>>(result);
                     this.Courses = courses;
 
                 }
