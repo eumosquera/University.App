@@ -63,7 +63,7 @@ namespace University.App.ViewsModels.Forms
                     var registerRes = JsonConvert.DeserializeObject<RegisterResDTO>(result);
                     var id = registerRes.Id;
                     var token = registerRes.Token;
-                    await Application.Current.MainPage.DisplayAlert("Notify", token + id, "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert("Notify", ${token + id}, "Aceptar");
 
                     //Redirect
                     await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
