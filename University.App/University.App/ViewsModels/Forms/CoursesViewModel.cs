@@ -56,7 +56,7 @@ namespace University.App.ViewsModels.Forms
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Notify", "Fail", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert("Notify", "Fail", "OK");
                 }
             }
             this.IsRefreshing = false;

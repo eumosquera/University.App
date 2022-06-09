@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using University.App.DTOs;
 using Xamarin.Forms;
+using University.App.Views.Forms;
 
 namespace University.App.ViewsModels.Forms
 {
@@ -13,6 +14,9 @@ namespace University.App.ViewsModels.Forms
 
             await Application.Current.MainPage.DisplayAlert("Notify ", $"selectd {this.Title} ", "Ok");
 
+            CourseDetailPage detailPage = new CourseDetailPage();
+            detailPage.BindingContext = new CourseDetailViewModel(this);
+            await Application.Current.MainPage.Navigation.PushAsync(detailPage);
         }
 
         public Command OnItemClickCommand { get; set; }
